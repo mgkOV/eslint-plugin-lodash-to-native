@@ -1,0 +1,19 @@
+{
+  "name": "eslint-plugin-lodash-to-native",
+  "version": "1.0.0",
+  "description": "Плагин предлагает заменить lodash методы на нативные JS ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "mgkOV",
+  "license": "ISC"
+}
