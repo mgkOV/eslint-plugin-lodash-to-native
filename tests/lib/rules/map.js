@@ -34,7 +34,8 @@ ruleTester.run("map", map, {
     invalidCase("_.map([4, 8], add)", "[4, 8].map(add)"),
     invalidCase("_.map(a, square)"),
     invalidCase(
-      "_.map(a, square), Array.isArray(collection) ? collection.map(fn) : _.map(collection, fn)"
+      "_.map(collection, fn)",
+      "Array.isArray(collection) ? collection.map(fn) : _.map(collection, fn)"
     )
   ]
 });
