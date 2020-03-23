@@ -14,8 +14,20 @@ ruleTester.run("map", map, {
     "_.map({}, square)",
     "_.map({a: 1}, square)",
     "Array.isArray(a) ? a.map(square) : _.map(a, square)",
-    "_ = { map: function(cl, fn) { console.log(cl); } }; _.map([4, 8], add);",
-    "_ = { map: function(cl, fn) { console.log(cl); } }; _.map(a, add);"
+    `
+      _ = { map: function(cl, fn) { console.log(cl); } }; 
+      _.map([4, 8], add);
+    `,
+    {
+      code: `
+            _ = { map(cl, fn) { console.log(cl); } }; 
+            _.map(a, add);
+          `,
+      parserOptions: { ecmaVersion: 2015 }
+    },
+    "function fn() { return _.map([], square); }",
+    "function fn(a) { return _.map(a, square); }",
+    { code: "const fn = a => _.map(a, square);", parserOptions: { ecmaVersion: 2015 } }
   ],
 
   invalid: [
